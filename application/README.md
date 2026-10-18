@@ -53,7 +53,7 @@ For your own portfolio, copy the nine JSON files into your own config directory 
 | experience.json | Ordered records with id, employer/title, YYYY-MM start, current, displayDates, description/highlights, optional URL; past roles require end, current roles omit it. |
 | education.json | id, institution/qualification, description, status (awaiting-graduation/completed/studying), optional YYYY-MM start/end and URL. State qualifications accurately. |
 | skills.json | Ordered groups with id/title, nonempty technologies, optional supported icon. No proficiency scores. |
-| projects.json | id/slug/title/summary, categories/stack, role/status/featured, screenshots array; optional repository/live, caseStudy, caseStudyHeadings, video. Arrays determine row/route order; featured is data, not an automatic sort. |
+| projects.json | id/slug/title/summary, categories/stack, role/status/featured, screenshots array; optional repository/live, caseStudy, caseStudyHeadings, showcase, video, poster. Arrays determine row/route order; featured is data, not an automatic sort. |
 | services.json | Ordered id/title/description/scope/icon, optional action `{label,section}`. |
 | theme.json | Exact supported color keys, Manrope/Michroma font choices, bounded gutters/card gaps/padding/control height and motion none/subtle. Defaults are the approved Figma aesthetic; opting into different values requires your own review. |
 | contact.json | provider web3forms, enabled, timeoutMs, labels, inquiry options and response copy. Public access key belongs in build settings, not this file. Disabled mode attempts no request. |
@@ -98,9 +98,9 @@ For a particular project, add the optional same-named object to its entry in `sr
 
 Keys match the original `##` heading text in the referenced Markdown case study exactly (case-sensitive). Project labels override global labels; unmatched headings retain their original wording. Missing maps default to empty, keeping older configs valid. All labels must be nonempty plain text. Labels change headings only; narrative paragraphs, section order and project titles remain as authored. Edit the Markdown body to explain the project's actual purpose, whether addressing a challenge, exploring an idea or demonstrating skills. Rebuild after config/content edits. No component changes are needed.
 
-## Project-detail preview media
+## Project preview media (homepage and details)
 
-Each detail page shows a responsive 16:9 preview between its summary and facts divider. With no media, it uses the homepage motif and configured `site.copy.projectPreview` text. A project's first screenshot replaces the placeholder; a configured video poster takes priority.
+Each detail page shows a responsive 16:9 preview between its summary and facts divider. With no media, it uses the homepage motif and configured `site.copy.projectPreview` text. Configured showcase, video, standalone poster and first screenshot replace the placeholder in that priority order. Showcase controls/disclosure remain outside the stage; details use a 16:9 stage and listing showcases use 16:10.
 
 For your own project previews, use the existing project `video` record:
 
@@ -124,3 +124,46 @@ Add the real files under `application/public/media/` before referencing them. Lo
 The six sample Markdown stories demonstrate Purpose & Goals, Approach and Engineering decisions. Replace them with your own factual project accounts.
 
 The default resume is unavailable. Add your own PDF and set resume.available=true with its local /media/ path. Omit resume.note to hide supporting text.
+
+## Bravado showcases and standalone posters
+
+Both homepage cards and project detail pages use the shared ProjectMedia renderer. Selection order is **showcase → video → poster → first screenshot → placeholder**. Existing configurations remain valid; no showcase is required and the starter includes no personal showcase assets.
+
+For a Bravado export, copy its `bravado.js`, `bravado.css`, `assets/`, poster and applicable license notices together into `application/public/media/my-showcase/`. Keep relative font/icon paths intact. The demo `index.html`, `embed.html`, single-file `showcase.html` and creative handoff files are not needed for direct mounting. Add this to the relevant `projects.json` record:
+
+```json
+"showcase": {
+  "module": "/media/my-showcase/bravado.js",
+  "stylesheet": "/media/my-showcase/bravado.css",
+  "label": "My project animated showcase",
+  "poster": {
+    "src": "/media/my-showcase/preview.png",
+    "alt": "Describe the preview",
+    "width": 1600,
+    "height": 900,
+    "provenance": "Your approved source and rights"
+  }
+}
+```
+
+Use the real poster dimensions. Paths must resolve inside public/media; remote modules, traversal, non-JS module entries and non-CSS stylesheets are rejected. Filenames must be `bravado.js` and `bravado.css`. These are reviewed application code, not arbitrary uploads. Copy referenced nested assets and preserve notices; path validation cannot establish that a module is safe or that all of its nested references are valid. Rebuild and run browser verification after integrating each real export.
+
+A compatible module exports `mountBravado(container, options)` and returns a controller with `destroy()`. The host passes `{aspectRatio: '16 / 10', displayMode: 'compact', controls: true}` for cards and `{aspectRatio: '16 / 9', displayMode: 'detail', controls: true}` for details. The module owns accessible manual playback, seek/replay, reduced-motion behavior, offscreen suspension and any expanded dialog; `destroy()` must release observers, frames, listeners and dialogs. Scope CSS to the showcase (the supplied Sophia-format `ss-` classes are supported), avoid global resets, and load any assets locally. Different exports need an adapter if they do not implement this API. No iframe or animation library is required.
+
+The host waits until the preview approaches the viewport, loads its scoped stylesheet/module, mounts it, and cleans up when filtering or navigating removes it. It retains the poster without JavaScript or if the module, stylesheet or mount contract fails. It does not call play automatically; compatible modules must also start paused. Controls and disclosure remain below the stage and may increase row height. Stylesheets are cached for repeated placements and expanded dialogs.
+
+For a standalone poster, add an image record directly without configuring video or creating a screenshot gallery:
+
+```json
+"poster": {
+  "src": "/media/my-project-poster.webp",
+  "alt": "Describe the project preview",
+  "width": 1600,
+  "height": 900,
+  "provenance": "Your approved source and rights"
+}
+```
+
+For video, use the `video` record above. It now renders in homepage cards as well as details: direct MP4/WebM uses native controls, no autoplay and `preload="none"`, with transcript and optional captions. External video pages remain explicit poster links. A project-level poster does not replace the required `video.poster`; each configured media record remains independently valid.
+
+Verification: `npm run test:media` temporarily builds fictional showcase/video/poster configurations, records a tiny silent WebM using installed Playwright Chromium, tests both placements at 320/390/768/1440px, then removes its temporary public assets and rebuilds the default configuration even after test failures. It must run from the repository root and must not overlap another build or preview that relies on application/out. Captures go to ignored `.artifacts/media/`. The synthetic module verifies the mounting/lifecycle contract; it does not certify choreography or accessibility of third-party exports. No test fixture is included in the final default export. Install Chromium first with `npx playwright install chromium`.

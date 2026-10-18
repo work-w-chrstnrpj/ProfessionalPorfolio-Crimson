@@ -116,3 +116,21 @@ test('local preview video paths must be MP4/WebM and point to real public assets
  expect(()=>validatePortfolio(c,options)).toThrow(/Missing or invalid file \/media\/future-preview.mp4/);
  c.projects[0].video.url='/media/preview.js';expect(()=>schemas.projects.parse(c.projects)).toThrow();
 });
+
+test('showcase paths and a standalone poster are validated like other public assets',()=>{
+ const dir=mkdtempSync(resolve(tmpdir(),'crimson-showcase-'));
+ try{
+  mkdirSync(resolve(dir,'media/demo'),{recursive:true});
+  writeFileSync(resolve(dir,'media/demo/bravado.js'),'export function mountBravado(){}');
+  writeFileSync(resolve(dir,'media/demo/bravado.css'),'');
+  writeFileSync(resolve(dir,'media/poster.svg'),'<svg/>');
+  const c=structuredClone(valid);delete c.profile.portrait;
+  c.projects=[{...c.projects[0],poster:{src:'/media/poster.svg',alt:'Synthetic poster',width:16,height:9,provenance:'Test'},showcase:{module:'/media/demo/bravado.js',stylesheet:'/media/demo/bravado.css',label:'Synthetic showcase',poster:{src:'/media/poster.svg',alt:'Synthetic showcase poster',width:16,height:9,provenance:'Test'}}}];
+  expect(validatePortfolio(c,{...options,publicDir:dir}).projects[0].showcase?.label).toBe('Synthetic showcase');
+  const p=c.projects[0];
+  for(const module of ['https://example.com/bravado.js','/media/../bravado.js','/media/demo/embed.html']){p.showcase!.module=module;expect(()=>schemas.projects.parse(c.projects)).toThrow();}
+  p.showcase!.module='/media/missing/bravado.js';expect(()=>validatePortfolio(c,{...options,publicDir:dir})).toThrow(/showcase.module: Missing/);
+  p.showcase!.module='/media/demo/bravado.js';p.showcase!.stylesheet='/media/demo/embed.html';expect(()=>schemas.projects.parse(c.projects)).toThrow();
+  p.showcase!.stylesheet='/media/demo/bravado.css';p.poster!.src='/media/missing.svg';expect(()=>validatePortfolio(c,{...options,publicDir:dir})).toThrow(/poster.src: Missing/);
+ }finally{rmSync(dir,{recursive:true,force:true});}
+});

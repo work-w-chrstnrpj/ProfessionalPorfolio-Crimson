@@ -43,3 +43,5 @@ jobs:
         run: |
           npm run test:e2e
           npm run test:smoke
+      - name: Verify configurable showcase, video and poster previews
+        run: npm run test:media

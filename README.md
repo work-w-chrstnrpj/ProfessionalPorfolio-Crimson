@@ -21,7 +21,8 @@ Open http://127.0.0.1:3000. For static preview run npm run verify:portfolio then
 4. Add your resume PDF under public/media and set profile.resume.available=true plus its /media/ path. The sample download starts disabled.
 5. Set site.url to your own HTTPS origin and replace all example.com email/social/project links.
 6. Set up your own Web3Forms account, copy application/.env.example to ignored application/.env.local and configure your public form identifier. Contact starts disabled; enable it only after your recipient, anti-spam and domain setup works.
-7. Validate, build and test before publishing. Remove unused sample assets.
+7. Configure optional Bravado showcases, videos or standalone poster images in projects.json; see the preview-media examples in the full configuration guide.
+8. Validate, build and test before publishing. Remove unused sample assets.
 
 - [Full configuration guide](application/README.md)
 - [Checks and deployment](.github/workflows/README.md)

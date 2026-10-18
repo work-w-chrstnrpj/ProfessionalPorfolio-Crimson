@@ -16,7 +16,8 @@
     "validate:content": "tsx tools/portfolio/validate-config.ts",
     "test:layout": "playwright test --config playwright.layout.config.ts",
     "test:publication": "node --test tests/publication.test.mjs",
-    "test:starter": "node --test tests/starter.test.mjs"
+    "test:starter": "node --test tests/starter.test.mjs",
+    "test:media": "node tools/portfolio/verify-media.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

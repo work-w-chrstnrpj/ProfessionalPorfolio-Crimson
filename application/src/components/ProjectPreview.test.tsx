@@ -10,3 +10,11 @@ test('local preview uses an explicit player, poster and transcript without autop
 test('external video pages use a poster link without loading a third-party embed',()=>{const html=render({...project,video:{url:'https://www.youtube.com/watch?v=example',poster,transcript:'/media/transcript.txt'}});expect(html).toContain('Watch demo');expect(html).toContain('Approved demo poster');expect(html).not.toContain('<video');expect(html).not.toContain('<iframe');});
 
 test('a configured screenshot replaces the placeholder',()=>{const html=render({...project,screenshots:[poster]});expect(html).toContain('Approved demo poster');expect(html).not.toContain('Preview coming next');});
+
+test('standalone poster works without a video or screenshot gallery',()=>{
+ const html=render({...project,poster});expect(html).toContain('Approved demo poster');expect(html).not.toContain('<video');expect(html).not.toContain('Preview coming next');
+});
+test('showcase takes precedence over video and exposes a no-JS poster',()=>{
+ const html=render({...project,showcase:{module:'/media/demo/bravado.js',stylesheet:'/media/demo/bravado.css',label:'Example animated showcase',poster},video:{url:'/media/demo.mp4',poster,transcript:'/media/demo.txt'}});
+ expect(html).toContain('Example animated showcase');expect(html).toContain('Approved demo poster');expect(html).not.toContain('<video');expect(html).not.toContain('<iframe');
+});
