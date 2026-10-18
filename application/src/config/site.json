@@ -1,0 +1,137 @@
+{
+  "title": "Crimson — Portfolio Starter",
+  "description": "A placeholder portfolio. Replace the sample content with your own information.",
+  "url": "https://example.com",
+  "language": "en",
+  "navigation": [
+    {
+      "id": "about",
+      "label": "ABOUT"
+    },
+    {
+      "id": "project",
+      "label": "PROJECT"
+    },
+    {
+      "id": "service",
+      "label": "SERVICE"
+    },
+    {
+      "id": "contact",
+      "label": "CONTACT"
+    }
+  ],
+  "sections": [
+    {
+      "id": "about",
+      "visible": true
+    },
+    {
+      "id": "project",
+      "visible": true
+    },
+    {
+      "id": "service",
+      "visible": true
+    },
+    {
+      "id": "contact",
+      "visible": true
+    }
+  ],
+  "copy": {
+    "about": {
+      "kicker": "01 / ABOUT ME",
+      "title": "Engineering with\npurpose."
+    },
+    "project": {
+      "kicker": "02 / SELECTED PERSONAL WORK",
+      "title": "Ideas made tangible.",
+      "lead": "Sample projects to demonstrate the layout. Replace each with your own work."
+    },
+    "service": {
+      "kicker": "03 / WHAT I CAN HELP WITH",
+      "title": "Built around your needs.",
+      "lead": "From a focused feature to a connected application."
+    },
+    "contact": {
+      "kicker": "04 / LET’S CONNECT",
+      "title": "Have something\nin mind?",
+      "lead": "A role, a project, or an idea worth exploring. Let’s talk."
+    },
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills & technologies",
+    "skillsLead": "The languages, tools and practices behind my work.",
+    "projectAttribution": "SAMPLE PROJECT · REPLACE WITH YOUR WORK",
+    "projectPreview": "PROJECT PREVIEW / PLACEHOLDER",
+    "viewProject": "View project",
+    "allProjects": "All projects",
+    "noProjects": "No projects in this category.",
+    "showAll": "Show all",
+    "discuss": {
+      "label": "Discuss a Project",
+      "section": "contact"
+    },
+    "privacy": "Privacy",
+    "home": "Home",
+    "menuOpen": "MENU +",
+    "menuClose": "CLOSE ×",
+    "skip": "Skip to content",
+    "footer": "Your professional title",
+    "menuClosing": "Let’s build something meaningful.",
+    "auxiliary": {
+      "role": "Role",
+      "status": "Status",
+      "stack": "Technologies",
+      "evidence": "Project evidence",
+      "source": "View source",
+      "live": "Open live project",
+      "video": "Watch demo",
+      "transcript": "Read transcript",
+      "privacyLead": "How this portfolio handles information you choose to share.",
+      "privacySections": [
+        {
+          "title": "Browsing",
+          "body": "This static portfolio has no visitor accounts, application database or application analytics. The hosting provider may process request information to serve and secure the site."
+        },
+        {
+          "title": "Contact messages",
+          "body": "When the contact form is enabled, your name, email, inquiry type, optional company and message pass directly to Web3Forms and the receiving inbox. The public form identifier identifies the recipient configuration. Provider acceptance does not guarantee inbox delivery. The portfolio does not store messages in an application database."
+        },
+        {
+          "title": "Spam protection",
+          "body": "The enabled form loads hCaptcha to check submissions for abuse. That external service may process technical and interaction information under its own policies. No captcha loads while this portfolio’s form is disabled. Direct email remains available."
+        },
+        {
+          "title": "Retention and your choices",
+          "body": "Message retention depends on the form provider and receiving inbox. Exact account retention settings must be verified before form activation; this site does not promise immediate deletion or zero provider storage. Contact the portfolio owner to ask about messages you have sent."
+        },
+        {
+          "title": "External services",
+          "body": "Source, social and demo links open external sites with their own privacy practices. Read the service policies below for more information."
+        }
+      ],
+      "notFoundTitle": "Page not found.",
+      "notFoundLead": "This address is unavailable. Return home to explore the current work.",
+      "privacyContact": "Questions about your information",
+      "privacyLinks": [
+        {
+          "label": "Web3Forms privacy",
+          "url": "https://web3forms.com/privacy"
+        },
+        {
+          "label": "hCaptcha privacy",
+          "url": "https://www.hcaptcha.com/privacy"
+        },
+        {
+          "label": "GitHub privacy",
+          "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+        }
+      ],
+      "caseStudyHeadings": {
+        "Problem": "Purpose & Goals"
+      }
+    }
+  }
+}

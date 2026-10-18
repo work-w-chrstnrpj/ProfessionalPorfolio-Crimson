@@ -1,0 +1,101 @@
+{
+  "name": "Crimson",
+  "fullName": "Crimson Example",
+  "wordmark": "CRIMSON.",
+  "roles": [
+    "Software Engineer",
+    "Full-Stack Engineer",
+    "AI Engineer"
+  ],
+  "biography": "Replace this sample biography with your background, interests and the kind of work you want to do.",
+  "email": "hello@example.com",
+  "portrait": {
+    "src": "/media/portrait-placeholder.svg",
+    "alt": "Abstract placeholder portrait; replace with your own image",
+    "width": 965,
+    "height": 1630,
+    "provenance": "Original geometric placeholder created for this starter; no real person."
+  },
+  "hero": {
+    "headline": [
+      "Thoughtful ideas.",
+      "Precisely built."
+    ],
+    "mobileHeadline": [
+      "Thoughtful",
+      "ideas.",
+      "Precisely built."
+    ],
+    "introduction": "I’m Crimson, a placeholder for your name and professional introduction.",
+    "positioning": "SOFTWARE ENGINEER / FULL-STACK / AI",
+    "mobilePositioning": "SOFTWARE / FULL-STACK / AI",
+    "primary": {
+      "label": "Explore Projects",
+      "section": "project"
+    },
+    "secondary": {
+      "label": "Hire Me",
+      "section": "contact"
+    },
+    "portraitCaption": "Your portrait goes here.",
+    "disciplines": [
+      {
+        "id": "software",
+        "title": "Software",
+        "description": "Thoughtful architecture"
+      },
+      {
+        "id": "fullstack",
+        "title": "Full-stack",
+        "description": "From interface to API"
+      },
+      {
+        "id": "ai",
+        "title": "Applied AI",
+        "description": "Practical intelligence"
+      }
+    ]
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://example.com/your-linkedin"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "icon": "github",
+      "url": "https://example.com/your-github"
+    },
+    {
+      "id": "email",
+      "label": "Email Crimson",
+      "icon": "email",
+      "url": "mailto:hello@example.com"
+    }
+  ],
+  "expertise": [
+    {
+      "id": "fullstack",
+      "title": "Full-stack",
+      "tools": "React · Java · Spring Boot"
+    },
+    {
+      "id": "integration",
+      "title": "Integration",
+      "tools": "REST · SSO / RBAC · Databases"
+    },
+    {
+      "id": "ai",
+      "title": "Applied AI",
+      "tools": "Spring AI · RAG · MCP"
+    }
+  ],
+  "resume": {
+    "available": false,
+    "label": "Download resume",
+    "note": "Add your own resume PDF to enable this download."
+  }
+}

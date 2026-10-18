@@ -1,0 +1,23 @@
+# Dependencies and generated files
+node_modules/
+.next/
+dist/
+build/
+out/
+*.tsbuildinfo
+coverage/
+.cache/
+playwright-report/
+test-results/
+.artifacts/
+
+# Local settings and credentials
+.env
+.env.*
+!**/.env.example
+*.log
+.DS_Store
+.idea/
+.vscode/
+# Generated Next.js agent hints are local tooling, not source
+application/AGENTS.md

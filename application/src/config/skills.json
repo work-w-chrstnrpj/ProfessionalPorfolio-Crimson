@@ -1,0 +1,82 @@
+[
+  {
+    "id": "languages",
+    "title": "Languages",
+    "technologies": [
+      "C",
+      "C#",
+      "Python",
+      "Java",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "Frontend",
+    "technologies": [
+      "React",
+      "AngularJS",
+      "Responsive web design",
+      "UI/UX principles"
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Backend & architecture",
+    "technologies": [
+      "Spring Boot",
+      "Django",
+      "Flask",
+      "RESTful APIs",
+      "OOP",
+      "Microservices",
+      "Event-driven architecture"
+    ]
+  },
+  {
+    "id": "data",
+    "title": "Databases & search",
+    "technologies": [
+      "Apache Cassandra",
+      "Apache Solr",
+      "MongoDB",
+      "MariaDB",
+      "PostgreSQL",
+      "SQLite"
+    ]
+  },
+  {
+    "id": "cloud",
+    "title": "Cloud & delivery",
+    "technologies": [
+      "AWS",
+      "Docker",
+      "Git",
+      "GitHub",
+      "Agile",
+      "SDLC"
+    ]
+  },
+  {
+    "id": "quality",
+    "title": "Quality engineering",
+    "technologies": [
+      "Manual testing",
+      "Automated testing",
+      "QA",
+      "Debugging"
+    ]
+  },
+  {
+    "id": "ai",
+    "title": "AI & integration",
+    "technologies": [
+      "Spring AI",
+      "RAG",
+      "MCP",
+      "Agentic AI workflows",
+      "Process automation",
+      "API integrations"
+    ]
+  }
+]

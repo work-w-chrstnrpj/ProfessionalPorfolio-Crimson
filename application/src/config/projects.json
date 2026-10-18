@@ -1,0 +1,122 @@
+[
+  {
+    "id": "example-project-1",
+    "slug": "example-project-1",
+    "title": "Example Project 1",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "Web & Full-Stack",
+      "AI & Tooling"
+    ],
+    "stack": [
+      "React",
+      "NestJS",
+      "AI"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": true,
+    "repository": "https://example.com/project-1/source",
+    "screenshots": [],
+    "caseStudy": "example-project-1.md"
+  },
+  {
+    "id": "example-project-2",
+    "slug": "example-project-2",
+    "title": "Example Project 2",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "Desktop & Native"
+    ],
+    "stack": [
+      "Electron",
+      "React",
+      "SQLite"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": true,
+    "repository": "https://example.com/project-2/source",
+    "screenshots": [],
+    "caseStudy": "example-project-2.md"
+  },
+  {
+    "id": "example-project-3",
+    "slug": "example-project-3",
+    "title": "Example Project 3",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "Desktop & Native",
+      "AI & Tooling"
+    ],
+    "stack": [
+      "SwiftUI",
+      "PencilKit",
+      "iPad"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": true,
+    "repository": "https://example.com/project-3/source",
+    "screenshots": [],
+    "caseStudy": "example-project-3.md"
+  },
+  {
+    "id": "example-project-4",
+    "slug": "example-project-4",
+    "title": "Example Project 4",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "Web & Full-Stack"
+    ],
+    "stack": [
+      "React",
+      "Django",
+      "Docker"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": false,
+    "repository": "https://example.com/project-4/source",
+    "screenshots": [],
+    "caseStudy": "example-project-4.md"
+  },
+  {
+    "id": "example-project-5",
+    "slug": "example-project-5",
+    "title": "Example Project 5",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "AI & Tooling"
+    ],
+    "stack": [
+      "Node.js",
+      "Developer tooling"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": false,
+    "repository": "https://example.com/project-5/source",
+    "screenshots": [],
+    "caseStudy": "example-project-5.md"
+  },
+  {
+    "id": "example-project-6",
+    "slug": "example-project-6",
+    "title": "Example Project 6",
+    "summary": "Replace this sample summary with what you built and why it matters.",
+    "categories": [
+      "Web & Full-Stack"
+    ],
+    "stack": [
+      "JavaScript",
+      "Chrome extension"
+    ],
+    "role": "Your role",
+    "status": "Sample project — replace me",
+    "featured": false,
+    "repository": "https://example.com/project-6/source",
+    "screenshots": [],
+    "caseStudy": "example-project-6.md"
+  }
+]

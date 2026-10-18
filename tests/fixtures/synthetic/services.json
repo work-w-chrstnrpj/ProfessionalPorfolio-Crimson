@@ -1,0 +1,9 @@
+[
+  {
+    "id": "example-service",
+    "title": "Example Applications",
+    "description": "A synthetic service offer.",
+    "scope": "Example scope",
+    "icon": "software"
+  }
+]

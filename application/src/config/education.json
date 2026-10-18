@@ -1,0 +1,19 @@
+[
+  {
+    "id": "example-study",
+    "institution": "Example University",
+    "qualification": "Your current qualification",
+    "start": "2024-01",
+    "status": "studying",
+    "description": "Sample education entry — replace with your actual status."
+  },
+  {
+    "id": "example-course",
+    "institution": "Example Learning Provider",
+    "qualification": "Your qualification or certificate",
+    "start": "2020-01",
+    "end": "2023-12",
+    "status": "completed",
+    "description": "Sample completed course — replace with your own information."
+  }
+]

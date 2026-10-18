@@ -1,0 +1,45 @@
+[
+  {
+    "id": "example-role-1",
+    "employer": "Example Organization 1",
+    "title": "Your role or position",
+    "start": "2025-01",
+    "current": true,
+    "displayDates": "Example dates — replace me",
+    "description": "Describe your responsibilities and verified contributions here. This is placeholder content.",
+    "highlights": []
+  },
+  {
+    "id": "example-role-2",
+    "employer": "Example Organization 2",
+    "title": "Your role or position",
+    "start": "2024-01",
+    "current": false,
+    "displayDates": "Example dates — replace me",
+    "description": "Describe your responsibilities and verified contributions here. This is placeholder content.",
+    "highlights": [],
+    "end": "2024-12"
+  },
+  {
+    "id": "example-role-3",
+    "employer": "Example Organization 3",
+    "title": "Your role or position",
+    "start": "2023-01",
+    "current": false,
+    "displayDates": "Example dates — replace me",
+    "description": "Describe your responsibilities and verified contributions here. This is placeholder content.",
+    "highlights": [],
+    "end": "2023-12"
+  },
+  {
+    "id": "example-role-4",
+    "employer": "Example Organization 4",
+    "title": "Your role or position",
+    "start": "2022-01",
+    "current": false,
+    "displayDates": "Example dates — replace me",
+    "description": "Describe your responsibilities and verified contributions here. This is placeholder content.",
+    "highlights": [],
+    "end": "2022-12"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "example-education",
+    "institution": "Example University",
+    "qualification": "Example qualification",
+    "status": "completed",
+    "description": "Synthetic education entry."
+  }
+]

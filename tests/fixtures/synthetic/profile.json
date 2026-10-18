@@ -1,0 +1,66 @@
+{
+  "name": "Alex",
+  "fullName": "Alex Morgan",
+  "wordmark": "ALEX.",
+  "roles": [
+    "Example Engineer"
+  ],
+  "biography": "A synthetic engineer used to verify reusable configuration.",
+  "email": "alex@example.com",
+  "portrait": {
+    "src": "/media/example-avatar.svg",
+    "alt": "Abstract synthetic profile illustration",
+    "width": 400,
+    "height": 600,
+    "provenance": "Locally authored geometric fixture; no real person."
+  },
+  "hero": {
+    "headline": [
+      "Example ideas.",
+      "Carefully built."
+    ],
+    "mobileHeadline": [
+      "Example ideas.",
+      "Carefully built."
+    ],
+    "introduction": "I’m Alex, a synthetic engineer for configuration tests.",
+    "positioning": "EXAMPLE ENGINEER",
+    "mobilePositioning": "EXAMPLE ENGINEER",
+    "primary": {
+      "label": "Explore Projects",
+      "section": "project"
+    },
+    "secondary": {
+      "label": "Hire Me",
+      "section": "contact"
+    },
+    "portraitCaption": "Synthetic profile.",
+    "disciplines": [
+      {
+        "id": "example",
+        "title": "Systems",
+        "description": "A synthetic discipline"
+      }
+    ]
+  },
+  "socials": [
+    {
+      "id": "email",
+      "label": "Email Alex",
+      "icon": "email",
+      "url": "mailto:alex@example.com"
+    }
+  ],
+  "expertise": [
+    {
+      "id": "example",
+      "title": "Example systems",
+      "tools": "TypeScript"
+    }
+  ],
+  "resume": {
+    "available": false,
+    "label": "Download resume",
+    "note": "PDF · Updated version coming soon"
+  }
+}

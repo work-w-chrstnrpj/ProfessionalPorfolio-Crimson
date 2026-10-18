@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fullstack",
+    "title": "Full-Stack Applications",
+    "description": "Web interfaces and backend services built around your business workflow.",
+    "scope": "Interfaces / APIs / Application logic",
+    "icon": "fullstack"
+  },
+  {
+    "id": "integration",
+    "title": "APIs & Integrations",
+    "description": "Connect applications, data sources and third-party services through clear backend interfaces.",
+    "scope": "REST / Authentication / Data flows",
+    "icon": "integration"
+  },
+  {
+    "id": "ai",
+    "title": "Applied AI Features",
+    "description": "Chatbots, retrieval workflows and model-powered features integrated into useful software.",
+    "scope": "RAG / Model integration / AI workflows",
+    "icon": "ai"
+  }
+]

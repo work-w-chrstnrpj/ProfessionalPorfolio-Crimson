@@ -1,0 +1,40 @@
+{
+  "provider": "web3forms",
+  "enabled": false,
+  "timeoutMs": 15000,
+  "labels": {
+    "name": "Name",
+    "email": "Email",
+    "inquiry": "Inquiry type",
+    "company": "Company (optional)",
+    "message": "Message",
+    "select": "Select an inquiry type",
+    "submit": "Send Message",
+    "copyEmail": "Copy email"
+  },
+  "inquiries": [
+    {
+      "id": "employment",
+      "label": "Employment"
+    },
+    {
+      "id": "project",
+      "label": "Project"
+    },
+    {
+      "id": "other",
+      "label": "Other"
+    }
+  ],
+  "messages": {
+    "privacy": "Your details are used to respond to your inquiry.",
+    "sending": "Sending your message…",
+    "accepted": "Your message was submitted. Thank you!",
+    "validation": "Enter your name, a valid email and a message.",
+    "unavailable": "The contact form is not available yet. Please use email or a profile link.",
+    "failed": "Couldn’t send your message. Try again or email directly.",
+    "timeout": "Submission could not be confirmed. Please use email rather than submitting again.",
+    "quota": "The form is currently unavailable. Please use email.",
+    "copied": "Email address copied."
+  }
+}

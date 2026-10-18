@@ -1,0 +1,5 @@
+import {loadPortfolio} from '../../lib/config';
+import {pageMetadata} from '../../lib/seo';
+import {AuxiliaryPage} from '../../components/AuxiliaryPage';
+export function generateMetadata(){const c=loadPortfolio();return pageMetadata(c,`${c.site.copy.privacy} | ${c.site.title}`,c.site.copy.auxiliary.privacyLead,'/privacy/');}
+export default function Privacy(){const config=loadPortfolio(),copy=config.site.copy.auxiliary;return <AuxiliaryPage config={config} kicker={config.site.copy.privacy} title={config.site.copy.privacy} lead={copy.privacyLead}><article className="story-content">{copy.privacySections.map(s=><section key={s.title}><h2>{s.title}</h2><p>{s.body}</p></section>)}<ul className="privacy-links">{copy.privacyLinks.map(link=><li key={link.url}><a className="text-link" href={link.url} target="_blank" rel="noreferrer">{link.label}</a></li>)}</ul><h2>{copy.privacyContact}</h2><p><a className="text-link" href={`mailto:${config.profile.email}`}>{config.profile.email}</a></p></article><a className="project-action" href="/">{config.site.copy.home}</a></AuxiliaryPage>;}

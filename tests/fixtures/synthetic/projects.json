@@ -1,0 +1,19 @@
+[
+  {
+    "id": "sample-work",
+    "slug": "sample-work",
+    "title": "Sample Work",
+    "summary": "A fictional project for reuse acceptance.",
+    "categories": [
+      "Examples"
+    ],
+    "stack": [
+      "TypeScript"
+    ],
+    "role": "Example creator",
+    "status": "Synthetic fixture",
+    "featured": true,
+    "repository": "https://example.com/source",
+    "screenshots": []
+  }
+]

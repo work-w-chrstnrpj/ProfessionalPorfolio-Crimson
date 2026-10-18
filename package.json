@@ -1,0 +1,51 @@
+{
+  "name": "crimson-portfolio-starter",
+  "version": "1.0.0",
+  "description": "Reusable configuration-driven professional portfolio with static Next.js export",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:portfolio && npm run test:publication && npm run test:starter",
+    "dev": "npm run dev --workspace @crimson/application",
+    "build": "npm run build --workspace @crimson/application",
+    "test:portfolio": "vitest run",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "verify:portfolio": "npm run typecheck && npm run test:portfolio && npm run build && npm run test:smoke",
+    "test:e2e": "playwright test",
+    "test:smoke": "node --test tests/portfolio/*.test.mjs",
+    "preview": "node tools/portfolio/serve.mjs",
+    "validate:content": "tsx tools/portfolio/validate-config.ts",
+    "test:layout": "playwright test --config playwright.layout.config.ts",
+    "test:publication": "node --test tests/publication.test.mjs",
+    "test:starter": "node --test tests/starter.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "typescript",
+    "static-export",
+    "github-pages"
+  ],
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "application"
+  ],
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.64.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "22.19.0",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "jsdom": "27.4.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}

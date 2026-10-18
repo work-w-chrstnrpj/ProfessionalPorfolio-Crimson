@@ -1,0 +1,17 @@
+import {describe,test,expect,vi,afterEach} from 'vitest';
+import {loadPortfolio} from './config';import {submitContact,validateContact,type ContactFields} from './contact';
+const config={...loadPortfolio().contact,enabled:true};
+const fields:ContactFields={name:'Synthetic Sender',email:'sender@example.com',inquiry:'project',company:'Example',message:'This is synthetic test content for the local contact adapter.',botcheck:''};
+afterEach(()=>vi.useRealTimers());
+describe('direct Web3Forms adapter without real email',()=>{
+ test('validates trust-boundary fields and honeypot',()=>{expect(validateContact(fields,config)).toEqual([]);expect(validateContact({...fields,name:'',email:'bad',inquiry:'invalid',company:'x'.repeat(101),message:'short',botcheck:'bot'},config)).toEqual(['name','email','inquiry','company','message','botcheck']);});
+ test('disabled or missing public key never calls transport',async()=>{const fetcher=vi.fn();expect(await submitContact(fields,{...config,enabled:false},'public','token',fetcher)).toBe('unavailable');expect(await submitContact(fields,config,undefined,'token',fetcher)).toBe('unavailable');expect(fetcher).not.toHaveBeenCalled();});
+ test('invalid input or missing captcha never calls transport',async()=>{const fetcher=vi.fn();expect(await submitContact({...fields,message:'bad'},config,'public','token',fetcher)).toBe('validation');expect(await submitContact(fields,config,'public','',fetcher)).toBe('validation');expect(fetcher).not.toHaveBeenCalled();});
+ test('accepts only HTTP success and strict provider boolean; sends fixed public fields',async()=>{
+  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({success:true}),{status:200}));expect(await submitContact(fields,config,'public-test-key','captcha-token',fetcher)).toBe('accepted');
+  expect(fetcher).toHaveBeenCalledTimes(1);expect(fetcher.mock.calls[0][0]).toBe('https://api.web3forms.com/submit');const body=JSON.parse(fetcher.mock.calls[0][1].body);expect(body).toEqual({access_key:'public-test-key',name:fields.name,email:fields.email,inquiry_type:'project',company:'Example',message:fields.message,botcheck:false,'h-captcha-response':'captcha-token'});
+ });
+ test.each([[400,{success:true},'failed'],[200,{success:false},'failed'],[200,{success:'true'},'failed'],[429,{},'quota'],[500,{},'failed']])('status %i and provider body handled honestly',async(status,body,result)=>{const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify(body),{status:Number(status)}));expect(await submitContact(fields,config,'public','token',fetcher)).toBe(result);expect(fetcher).toHaveBeenCalledTimes(1);});
+ test('malformed response and network failure do not retry',async()=>{for(const response of [()=>Promise.resolve(new Response('<html>error</html>')),()=>Promise.reject(new Error('network'))]){const fetcher=vi.fn(response);expect(await submitContact(fields,config,'public','token',fetcher)).toBe('failed');expect(fetcher).toHaveBeenCalledTimes(1);}});
+ test('timeout aborts once and reports uncertainty without retry',async()=>{vi.useFakeTimers();const fetcher=vi.fn((_url,options)=>new Promise<Response>((_resolve,reject)=>options.signal.addEventListener('abort',()=>reject(new Error('aborted')))));const result=submitContact(fields,{...config,timeoutMs:1000},'public','token',fetcher);await vi.advanceTimersByTimeAsync(1000);expect(await result).toBe('timeout');expect(fetcher).toHaveBeenCalledTimes(1);});
+});

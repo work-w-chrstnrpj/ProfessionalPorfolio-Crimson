@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "background": "#202020",
+    "surface": "#292929",
+    "foreground": "#F5F5F5",
+    "muted": "#BCBCBC",
+    "decorative": "#C72B36",
+    "accent": "#FF6570",
+    "functional": "#D33A45",
+    "border": "#515151",
+    "primaryHover": "#FFE4E6",
+    "glowInner": "#A6222E",
+    "glowMid": "#82202B"
+  },
+  "fonts": {
+    "body": "Manrope",
+    "display": "Michroma"
+  },
+  "spacing": {
+    "desktopGutter": 72,
+    "mobileGutter": 24,
+    "cardGap": 20,
+    "cardPadding": 24,
+    "controlHeight": 52
+  },
+  "motion": "none"
+}

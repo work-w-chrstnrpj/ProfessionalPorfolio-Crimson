@@ -1,0 +1,12 @@
+[
+  {
+    "id": "example-role",
+    "employer": "Example Organisation",
+    "title": "Example Engineer",
+    "start": "2024-01",
+    "current": true,
+    "displayDates": "2024 — PRESENT",
+    "description": "Synthetic experience entry.",
+    "highlights": []
+  }
+]
