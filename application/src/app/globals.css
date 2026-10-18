@@ -283,3 +283,16 @@ h1{font-family:'Michroma',sans-serif;font-size:58px;line-height:73px;font-weight
 .project-preview .project-media video,.project-preview .project-media>a,.project-preview .project-media>a>img{display:block;width:100%;height:100%;object-fit:contain}
 .project-preview .preview-label{position:absolute;left:20px;bottom:20px;padding:8px 12px;background:var(--background);color:var(--foreground);font-size:14px;line-height:20px}
 .project-preview>.project-action{display:inline-flex;margin-top:12px}
+
+/* Optional project media share the same renderer on cards and detail pages. */
+.project-card-preview,.project-showcase,.animated-showcase{min-width:0}
+.project-card-preview>.project-action{display:inline-flex;margin-top:12px}
+.project-media video,.project-media>a,.project-media>a>img{display:block;width:100%;height:100%;object-fit:contain}
+.project-media .preview-label{position:absolute;left:20px;bottom:20px;padding:8px 12px;background:var(--background);color:var(--foreground);font-size:14px;line-height:20px}
+.animated-showcase{width:100%;background:var(--surface)}
+.animated-showcase>img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.animated-showcase[data-compact=true]>img{aspect-ratio:16/10}
+.animated-showcase .ss-controls,.animated-showcase .ss-summary,.animated-showcase .ss-manual{padding-left:12px;padding-right:12px}
+.animated-showcase .ss-summary{padding-bottom:12px}
+.animated-showcase .ss-controls button,.animated-showcase .ss-manual button{min-height:44px}
+.animated-showcase .ss-controls input{min-width:0}

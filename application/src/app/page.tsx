@@ -11,7 +11,7 @@ export default function Home() {
     <a className="skip-link" href="#content">{config.site.copy.skip}</a>
     <Header profile={config.profile} navigation={content.navigation} copy={config.site.copy}/>
     <main id="content" tabIndex={-1}><Hero profile={config.profile} visible={content.sections.map(s=>s.id)}/>
-      {content.sections.map(s=>s.id==='about'?<About key={s.id} config={config}/>:s.id==='project'?<Projects key={s.id} projects={config.projects} categories={content.categories} copy={config.site.copy}/>:s.id==='service'?<Services key={s.id} config={config} visible={content.sections.map(s=>s.id)}/>:s.id==='contact'?<Contact key={s.id} config={config}/>:null)}
+      {content.sections.map(s=>s.id==='about'?<About key={s.id} config={config}/>:s.id==='project'?<Projects language={config.site.language} key={s.id} projects={config.projects} categories={content.categories} copy={config.site.copy}/>:s.id==='service'?<Services key={s.id} config={config} visible={content.sections.map(s=>s.id)}/>:s.id==='contact'?<Contact key={s.id} config={config}/>:null)}
     </main><Footer config={config}/>
   </div>;
 }
